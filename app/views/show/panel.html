@@ -1,0 +1,30 @@
+<div ng-class="{hidden:vm.hidden}">
+	<div ng-class="['panel',vm.style]" >
+		<div class="panel-heading">
+			<div class="panel-title">
+				<span class="glyphicon glyphicon-th-list"></span>
+				{{vm.title}}
+				<span class="pull-right">
+					<span class="glyphicon" 
+						  ng-class="vm.collapsed?'glyphicon-chevron-down':'glyphicon-chevron-up'"
+						  ng-click="vm.collapsed=!vm.collapsed"></span>
+					&nbsp;
+					<span class="glyphicon glyphicon-remove" ng-click="vm.hidden=true"></span>
+				</span>
+			</div>
+		</div>
+		<div class="panel-body" ng-class="{hidden:!vm.collapsed}">
+				{{vm.content}}
+		</div>
+	</div>
+</div>
+<span class="btn btn-primary" ng-click="vm.hidden=false" ng-if="vm.hidden">显示</span>
+<hr>
+<label>风格：
+<select  ng-model="vm.style" class="form-control">
+	<option value="panel-primary">panel-primary</option>
+	<option value="panel-success">panel-success</option>
+    <option value="panel-info">panel-info</option>
+    <option value="panel-danger">panel-danger</option>
+    <option value="panel-warning">panel-warning</option>
+</select>

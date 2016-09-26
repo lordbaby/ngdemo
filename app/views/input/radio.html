@@ -1,0 +1,18 @@
+<h4>按钮组风格</h4>
+<div class="btn-group">
+<label  ng-repeat="value in vm.values" ng-class="{'btn':true,'btn-primary':true,'active':value.code==vm.selection.code}" >
+	<input type="radio" class="hidden" name="test" ng-model="vm.selection" ng-value="value">
+	code：{{value.code}}，age：{{value.age}}
+</label>
+</div>
+<h4>传统单选按钮</h4>
+<div class="btn-group">
+	<label ng-repeat="value in vm.values">
+		<input type="radio" name="test" 
+		ng-model="vm.selection" 
+		ng-value="value" 
+		ng-checked="vm.selection.code==value.code">
+		code：{{value.code}}，age：{{value.age}}
+	</label>
+</div>
+<div class="wells">选中的是：{{vm.selection}}</div>

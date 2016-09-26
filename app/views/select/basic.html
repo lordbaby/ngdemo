@@ -1,0 +1,32 @@
+<h4>1.把对象做value</h4>
+<label>
+    <select class="form-control" ng-model="vm.value" ng-options="city.label for city in vm.cities">
+        <option value="">--请选择城市--</option>
+    </select>
+</label>
+<div>您选择的是：{{vm.value}}</div>
+<h4>2.把code做value</h4>
+<label>
+    <select class="form-control" ng-model="vm.codeValue" ng-options=" city.code as city.label for city in vm.cities">
+        <option value="">--请选择城市--</option>
+    </select>
+</label>
+<div>您选择的是：{{vm.codeValue}}</div>
+
+<h4>3.Track by</h4>
+<label>
+    <select class="form-control" ng-model="vm.trackbyValue" ng-options="city.label for city in vm.cities track by city.code">
+        <option value="">--请选择城市--</option>
+    </select>
+</label>
+<div>您选择的是：{{vm.value}}</div>
+<div class="alert alert-info">
+  track by 可以让匹配的时候只比较特定的字段，而忽略其他字段，并且不做对象的引用比较
+</div>
+<h4>3.分组</h4>
+<label>
+    <select class="form-control" ng-model="vm.groupbyValue" ng-options="city.code as city.label group by city.province for city in vm.cities">
+        <option value="">--请选择城市--</option>
+    </select>
+</label>
+<div>您选择的是：{{vm.codeValue}}</div>

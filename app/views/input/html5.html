@@ -1,0 +1,42 @@
+<h4>Html5 组件</h4>
+
+<div class="alert alert-info">
+	这里展示一组html5组件，它们都能和ng-model配合工作
+</div>
+
+<h4>单行文本</h4>
+<input type="text" ng-model="vm.text" class="form-control" />
+<div>输入的是：{{vm.text}}</div>
+<h4>搜索框</h4>
+<input type="search" class="form-control" ng-model="vm.search">
+<div>输入的是：{{vm.search}}</div>
+<h4>多行文本</h4>
+<textarea  cols="30" rows="3" class="form-control" ng-model="vm.textarea"></textarea>
+<div>输入的是:
+	<pre>{{vm.textarea}}</pre>
+</div>
+<h4>数字</h4>
+<input type="number" class="form-control" ng-model="vm.number">
+<div>输入的是：{{vm.number}}</div>
+<h4>链接</h4>
+<input type="url" class="form-control" ng-model="vm.url">
+<div>输入的是：{{vm.url}}</div>
+<h4>邮件地址</h4>
+<input type="email" class="form-control" ng-model="vm.email">
+<div>输入的是：{{vm.email}}</div>
+<h4>月份</h4>
+<input type="month" class="form-control" ng-model="vm.month">
+<div>输入的是：{{vm.month}}</div>
+<h4>周</h4>
+<input type="week" class="form-control" ng-model="vm.week">
+<div>输入的是：{{vm.week}}</div>
+<h4>日期</h4>
+<input type="date" class="form-control" ng-model="vm.date">
+<div>输入的是：{{vm.date}}</div>
+<h4>时间</h4>
+<input type="time" class="form-control" ng-model="vm.time"/>
+
+<div>您输入的是：{{vm.time}}</div>
+<h4>颜色</h4>
+<input type="color" class="form-control" ng-model="vm.color">
+<div>输入的是：{{vm.color}}</div>

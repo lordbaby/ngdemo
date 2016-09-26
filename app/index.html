@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="case">
+<head>
+	<meta charset="UTF-8">
+	<title>ngShowCase</title>
+	<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+				<app-nav></app-nav>
+			</div>
+			<div class="col-md-5">
+				<app-brief></app-brief>
+				<div ui-view>正在加载中，请稍后....</div>
+			</div>
+			<div class="col-md-5"></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+	<script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
+	<script type="text/javascript" src="../bower_components/angular-file-upload/angular-file-upload.min.js"></script>
+	
+	<!--angular本地语言包-->
+	<script type="text/javascript" src="libs/angular-locale_zh-cn.js"></script>
+	<script type="text/javascript" src="libs/ui-bootstrap-locale_zh-cn.js"></script>
+	<!--app bootstrap ,constant, router etc.-->
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/config/nav-data.js"></script>
+	<script type="text/javascript" src="js/config/city-data.js"></script>
+	<script type="text/javascript" src="js/directives/app/nav.js"></script>
+	<script type="text/javascript" src="js/router.js"></script>
+	<script type="text/javascript" src="js/filters/orderClass.js"></script>
+		<script type="text/javascript" src="js/filters/paging.js"></script>
+	<script type="text/javascript" src="js/filters/size.js"></script>
+
+	
+	<script type="text/javascript" src="js/controllers/notFound.js"></script>
+	<!--基本显示控件 ctrl-->
+	<script type="text/javascript" src="js/controllers/show.js"></script>
+	<script type="text/javascript" src="js/controllers/show/alert.js"></script>
+	<script type="text/javascript" src="js/controllers/show/progress.js"></script>
+	<script type="text/javascript" src="js/controllers/show/panel.js"></script>
+	<script type="text/javascript" src="js/controllers/show/tab.js"></script>
+	<!--基本编辑控件 Ctrl-->
+	<script type="text/javascript" src="js/controllers/input.js"></script>
+	<script type="text/javascript" src="js/controllers/input/html5.js"></script>
+	<script type="text/javascript" src="js/controllers/input/checkbox.js"></script>
+	<script type="text/javascript" src="js/controllers/input/radio.js"></script>
+	<script type="text/javascript" src="js/controllers/input/calendar.js"></script>
+	<script type="text/javascript" src="js/controllers/input/file.js"></script>
+	<!--下拉框控件-->
+	<script type="text/javascript" src="js/controllers/select.js"></script>
+	<script type="text/javascript" src="js/controllers/select/basic.js"></script>
+	<script type="text/javascript" src="js/controllers/select/cascade.js"></script>
+	<script type="text/javascript" src="js/controllers/select/custom.js"></script>
+	<script type="text/javascript" src="js/controllers/select/typeahead.js"></script>
+	<!--表格-->
+	<script type="text/javascript" src="js/controllers/table.js"></script>
+	<script type="text/javascript" src="js/controllers/table/basic.js"></script>
+	<script type="text/javascript" src="js/controllers/table/local.js"></script>
+	
+</body>
+</html>

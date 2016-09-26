@@ -1,0 +1,8 @@
+<select  class="form-control" ng-model="vm.value">
+	<option value="">--请选择--</option>
+	<optgroup ng-repeat="province in vm.provinces" label="{{province.label}}">
+		<option ng-repeat="city in province.cities">
+			{{city.label}} （{{city.population|number}}万人）
+		</option>
+	</optgroup>
+</select>

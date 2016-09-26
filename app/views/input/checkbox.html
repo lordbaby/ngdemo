@@ -1,0 +1,12 @@
+<div ng-init="vm.checked=false">
+    <h4>传统风格</h4>
+    <label>
+        <input type="checkbox" ng-model="vm.checked">&nbsp;复选框
+    </label>
+    <div>{{vm.checked}}</div>
+    <h4>按钮风格</h4>
+    <label class="btn btn-primary" ng-class="{active:vm.checked}">
+        <input type="checkbox" class="hidden" ng-model="vm.checked">&nbsp;复选框
+    </label>
+    <div>{{vm.checked}}</div>
+</div>
