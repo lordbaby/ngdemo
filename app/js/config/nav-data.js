@@ -85,5 +85,35 @@ angular.module('case')
 				state:'table.local'
 			}
 		]
+	},
+	{
+		label:'树',
+		items:[
+			{
+				label:'基本',
+				state:'tree.basic'
+			},
+			{
+				label:'级联选择',
+				state:'tree.cascade'
+			}
+		]
+	},
+	{
+		label:'表单',
+		items:[
+			{
+				label:'基本',
+				state:'form.basic'
+			},
+			{
+				label:'自定义验证',
+				state:'form.customValid'
+			},
+			{
+				label:'级联/依赖',
+				state:'form.repeatPwd'
+			}
+		]
 	}
 ]);
