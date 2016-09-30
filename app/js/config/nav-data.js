@@ -115,5 +115,14 @@ angular.module('case')
 				state:'form.repeatPwd'
 			}
 		]
+	},
+	{
+		label:'第三方组件',
+		items:[
+			{
+				label:'百度UEditor',
+				state:'thirdparty.ueditor'
+			}
+		]
 	}
 ]);
