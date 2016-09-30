@@ -113,6 +113,10 @@ angular.module('case')
 			{
 				label:'级联/依赖',
 				state:'form.repeatPwd'
+			},
+			{
+				label:'动态表单',
+				state:'form.dynamic'
 			}
 		]
 	},

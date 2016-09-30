@@ -1,0 +1,101 @@
+<form class="form-horizontal">
+    <div ng-repeat-start="formItem in formItems" ng-if="formItem.type=='text'" class="form-group">
+        <label class="col-xs-2 control-label">{{formItem.name}}</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control">
+        </div>
+    </div>
+    <div ng-if="formItem.type=='checkbox'" class="form-group">
+        <label class="col-xs-2 control-label">{{formItem.name}}</label>
+        <div class="col-xs-10">
+            <div class="checkbox">
+                <label ng-repeat="checkItem in formItem.items">
+                    <input type="checkbox" ng-model="checkItem.checked">{{checkItem.name}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <div ng-if="formItem.type=='color'" class="form-group">
+        <label class="col-xs-2 control-label">{{formItem.name}}</label>
+        <div class="col-xs-10">
+            <div class="checkbox">
+                <label ng-repeat="checkItem in formItem.items" ng-init="checkItem.newName=checkItem.name">
+                    <input type="checkbox" ng-model="checkItem.$checked">
+                    <span ng-style="{'color':checkItem.value}">▇</span>
+                    <span ng-if="!checkItem.$checked">{{checkItem.name}}</span>
+                    <input ng-if="checkItem.$checked" ng-model="checkItem.newName" />
+                </label>
+            </div>
+        </div>
+    </div>
+    <div ng-if="formItem.type=='size'" class="form-group">
+        <label class="col-xs-2 control-label">{{formItem.name}}</label>
+        <div class="col-xs-10">
+            <div class="checkbox">
+                <label ng-repeat="checkItem in formItem.items" ng-init="checkItem.newName=checkItem.name">
+                    <input type="checkbox" ng-model="checkItem.$checked">
+                    <span ng-if="!checkItem.$checked">{{checkItem.name}}</span>
+                    <input ng-if="checkItem.$checked" ng-model="checkItem.newName" />
+                </label>
+            </div>
+        </div>
+    </div>
+    <div ng-if="formItem.type=='select'" class="form-group">
+        <label class="col-xs-2 control-label">{{formItem.name}}</label>
+        <div class="col-xs-4">
+            <select class="form-control" ng-options="item.name for item in formItem.items" ng-model="formItem.selectedItem">
+                <option>--请选择--</option>
+            </select>
+        </div>
+    </div>
+    <div ng-repeat-end ng-if="formItem.type=='region'" class="form-group">
+        <label class="col-xs-2 control-label">{{formItem.name}}</label>
+        <div class="col-xs-8">
+            <div class="row">
+                <div class="col-xs-3" ng-repeat="region in regions">
+                    <select class="form-control" ng-options="item.name for item in region" ng-model="formItem.selectedRegions[$index]" ng-change="selectedRegionChange(formItem, $index)">
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<button class="btn btn-info" ng-click="generateTable()">生成表格</button>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>颜色</th>
+            <th>尺码</th>
+            <th>*售价</th>
+            <th>*库存</th>
+            <th>库存预警值</th>
+            <th>条形码</th>
+            <th>商家商品编码</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in priceTable">
+            <td ng-if="item.$index==0" ng-attr-rowspan="{{item.$rowspan}}">
+                {{item.color}}
+            </td>
+            <td>{{item.size}}</td>
+            <td>
+                <input type="text" ng-model="item.price" />
+            </td>
+            <td>
+                <input type="text" ng-model="item.count" />
+            </td>
+            <td>
+                <input type="text" ng-model="item.countLimit" />
+            </td>
+            <td>
+                <input type="text" ng-model="item.barCode" />
+            </td>
+            <td>
+                <input type="text" ng-model="item.code" />
+            </td>
+            <td>{{item.operation}}</td>
+        </tr>
+    </tbody>
+</table>
